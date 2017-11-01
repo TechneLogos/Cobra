@@ -12,7 +12,8 @@ setup(
     packages=["cobra"],
     long_description=open("docs/README.md").read(),
     classifiers=[
-        #'License :: OSI Approved :: Apache Software License',
+        'License :: OSI Approved :: GNU Lesser General Public License v3'
+        ' (LGPLv3)',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',

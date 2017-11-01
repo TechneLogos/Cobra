@@ -3,10 +3,6 @@ import logging
 import cobra
 
 
-def handler_func():
-    print("hnadler")
-
-
 def listener_func1():
     print("listener 1")
 
@@ -23,10 +19,8 @@ class TestEvents(unittest.TestCase):
     def test_event_init(self):
         self.assertIsInstance(cobra.Event(), cobra.Event)
 
-    def test_set_handler(self):
-        self.test_event.set_handler(handler_func)
-
     def test_add_listeners(self):
+        """Checks that listeners are correctly added."""
         error_msg = "Listeners were not correctly added."
         self.test_event.add_listener(listener_func1, listener_func2)
         self.assertIn(listener_func1, self.test_event.get_listeners(),
@@ -50,6 +44,10 @@ class TestEvents(unittest.TestCase):
 class TestEventSystem(unittest.TestCase):
     def setUp(self):
         self.event_system = cobra.EventSystem("TestSystem")
+
+    def test_get_event(self):
+        """Check that EventSystem.get_event() correctly returns an event."""
+        self.assertIsInstance(self.event_system.get_event("test"), cobra.Event)
 
     def test_loggers(self):
         """checks that the EventSysstem logs correctly."""
