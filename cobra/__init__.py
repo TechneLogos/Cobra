@@ -3,15 +3,11 @@ import threading
 
 
 class Event(object):
-    def __init__(self, name=None, *args, system=None):
+    def __init__(self, name=None, *args):
         """Initializes a new instance of the Event class.
         Name attribute is for logging and identification purposes."""
         self.name = name if name is not None else "Unnamed"
-        self.__system = system
-        if system is not None:
-            self.__logger = logging.getLogger("EventSystem")
-        else:
-            self.__logger = logging.getLogger(self.name)
+        self.__logger = logging.getLogger("EventSystem").getChild(self.name)
         self.__listeners = set()
         self.__listeners.update(args)
         self.__logger.info("{0} event initialized")
@@ -53,10 +49,5 @@ class Event(object):
 
 class EventError(Exception):
     """Base class of Exceptions rasied by cobra."""
-    def __init__(self):
-        """"""
-
-
-class EventSystemError(Exception):
     def __init__(self):
         """"""

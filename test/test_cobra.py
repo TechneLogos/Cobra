@@ -13,7 +13,6 @@ def listener_func2():
 
 class TestEvents(unittest.TestCase):
     def setUp(self):
-        self.event_system = cobra.EventSystem("TestSystem")
         self.test_event = cobra.Event()
 
     def test_event_init(self):
@@ -40,22 +39,6 @@ class TestEvents(unittest.TestCase):
     def test_invalid_listener(self):
         self.assertRaises(TypeError, self.test_event.add_listener(), None)
 
-
-class TestEventSystem(unittest.TestCase):
-    def setUp(self):
-        self.event_system = cobra.EventSystem("TestSystem")
-
-    def test_get_event(self):
-        """Check that EventSystem.get_event() correctly returns an event."""
-        self.assertIsInstance(self.event_system.get_event("test"), cobra.Event)
-
-    def test_loggers(self):
-        """checks that the EventSysstem logs correctly."""
-        self.assertLogs(logging.getLogger("EventSystem"))
-        self.assertLogs(logging.getLogger("EventSystem").
-                        getChild(self.event_system.name))
-        self.assertLogs(logging.getLogger("EventSystem").
-                        getChild(self.event_system.name).getChild("test"))
 
 
 if __name__ == "__main__":
