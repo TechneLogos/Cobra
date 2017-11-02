@@ -40,6 +40,5 @@ class TestEvents(unittest.TestCase):
         self.assertRaises(TypeError, self.test_event.add_listener(), None)
 
 
-
 if __name__ == "__main__":
     unittest.main()
