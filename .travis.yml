@@ -5,7 +5,7 @@ python:
   - "3.5"
   - "3.6"
 install:
-  - "pip install pep8"
+  - "pip install pycodestyle"
 script:
-  - "python -m test.test_cobra"
-  - "pep8 ./"
+  - "python test/test.py"
+  - "pycodestyle ./"

@@ -2,7 +2,7 @@ import logging
 import threading
 
 
-class Event(object):
+class _Event(object):
     def __init__(self, name=None, *args):
         """Initializes a new instance of the Event class.
         Name attribute is for logging and identification purposes."""
@@ -12,7 +12,7 @@ class Event(object):
         self.__listeners.update(args)
         self.__logger.info("{0} event initialized")
 
-    def __call__(self):
+    def _dispatch(self):
         """Dispatches this event."""
         for func in self.__listeners:
             func()
@@ -33,9 +33,6 @@ class Event(object):
         self.__logger.info("Listeners successfuly subsrcibed to {0}".
                            format(self.name))
 
-    def get_listeners(self):
-        return list(self.__listeners)
-
     def remove_listener(self, *args):
         """Removes a listener from this event."""
         for func in args:
@@ -47,7 +44,17 @@ class Event(object):
         self.__logger.info("{0}'s listeners cleared.".format(self.name))
 
 
+class CustomEvent(_Event):
+    """Custom event object initalizable by the devloper."""
+    def __init__(self):
+        super().__init__()
+
+    def __call__(self):
+        self._disptach()
+
+
 class EventError(Exception):
     """Base class of Exceptions rasied by cobra."""
     def __init__(self):
         """"""
+        pass
