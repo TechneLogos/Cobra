@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskName": "task-cobra_test",
+      "appliesTo": "test/cobra_test.py",
+      "type": "launch"
+    }
+  ]
+}

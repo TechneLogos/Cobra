@@ -7,7 +7,7 @@ setup(
     author='TechneLogos',
     maintainer='Roy Stewart',
     maintainer_email='roythomasstewart@gmail.com',
-    url='https://github.com/TheHDGenius/Cobra',
+    url='https://github.com/TheHDGenius/Cobra',
     license='GPL3.0',
     packages=["cobra"],
     long_description=open("docs/README.md").read(),

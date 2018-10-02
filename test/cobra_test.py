@@ -1,14 +1,13 @@
 import unittest
-import logging
 import cobra
 
 
-def listener_func1():
-    print("listener 1")
+def func1():
+    pass
 
 
-def listener_func2():
-    print("listener 2")
+def func2():
+    pass
 
 
 class TestEvents(unittest.TestCase):
@@ -17,13 +16,13 @@ class TestEvents(unittest.TestCase):
 
     def test_add_listeners(self):
         """Checks that listeners are correctly added."""
-        self.test_event.add_listener(listener_func1, listener_func2)
+        self.test_event.bind(func1, func2)
 
     def test_remove_listener(self):
-        self.test_event.remove_listener(listener_func1)
+        self.test_event.unbind(func1)
 
     def test_clear_listeners(self):
-        self.test_event.clear_listeners()
+        self.test_event.clear()
 
 
 if __name__ == "__main__":
