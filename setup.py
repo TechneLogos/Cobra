@@ -1,15 +1,15 @@
 from setuptools import setup
 
 setup(
-    name="Cobra",
-    version="0.1.0",
+    name="libevent",
+    version="1.0.0",
     description="Python event library.",
-    author='TechneLogos',
+    author='Roy Stewart',
     maintainer='Roy Stewart',
     maintainer_email='roythomasstewart@gmail.com',
-    url='https://github.com/TheHDGenius/Cobra',
+    url='https://github.com/TheHDGenius/libevent',
     license='GPL3.0',
-    packages=["cobra"],
+    packages=["libevent"],
     long_description=open("docs/README.md").read(),
     classifiers=[
         'License :: OSI Approved :: GNU Lesser General Public License v3'

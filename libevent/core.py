@@ -12,9 +12,6 @@ class Event(object):
 
     def bind(self, *args):
         """Adds the function(s) in args to the event's listeners set."""
-        for func in args:
-            if not callable(func):
-                raise TypeError
         self.__listeners.update(args)
 
     def unbind(self, *args):

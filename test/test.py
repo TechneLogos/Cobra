@@ -1,5 +1,5 @@
 import unittest
-import cobra
+import libevent
 
 
 def func1():
@@ -12,7 +12,7 @@ def func2():
 
 class TestEvents(unittest.TestCase):
     def setUp(self):
-        self.test_event = cobra.CustomEvent()
+        self.test_event = libevent.CustomEvent()
 
     def test_add_listeners(self):
         """Checks that listeners are correctly added."""

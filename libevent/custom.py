@@ -1,4 +1,4 @@
-from cobra.core import Event
+from libevent.core import Event
 
 
 class CustomEvent(Event):
