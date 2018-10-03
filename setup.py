@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name="libevent",
+    name="LibEvent",
     version="1.0.0",
     description="Python event library.",
     author='Roy Stewart',

@@ -1,18 +1,9 @@
 # Cobra
 
-## Status
-
-[https://img.shields.io/travis/TechneLogos/Cobra.svg]()
-[https://img.shields.io/github/release/TechneLogos/Cobra.svg]()
-
 ## About
 
-Cobra is an event library that provides an extensible event interface for python programmers while maintaining performance and usability.
+LibEvent is an event library for Python that aims to provide a simple, yet powerful, api while maintaining performance and flexibility. LibEvent also seeks to expose system level events, such as filesystem events, in a convenient api that builds off of the basic features of LibEvent.
 
-## Goals
+## Read More
 
-The aim of Cobra is to provide a flexible event framework for developers while maintianing performance.
-
-## Contributing
-
-Contributions are always welcome, but if you are looking to contribute to Cobra, read [Contributing.md](../docs/Contributing.md "Contribution Guide").
+You can find more information, including api reference, contributing details, and other important information in the github wiki.
