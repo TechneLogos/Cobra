@@ -101,4 +101,4 @@ ENV/
 .mypy_cache/
 
 # code editor
-.vs
+.vs/
