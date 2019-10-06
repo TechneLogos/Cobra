@@ -1,16 +1,16 @@
 from setuptools import setup
 
 setup(
-    name="LibEvent",
+    name="PyEventLib",
     version="1.0.0",
     description="Python event library.",
     author='Roy Stewart',
     maintainer='Roy Stewart',
     maintainer_email='roythomasstewart@gmail.com',
-    url='https://github.com/TheHDGenius/libevent',
+    url='https://github.com/TechneLogos/PyEventLib',
     license='GPL3.0',
-    packages=["libevent"],
-    long_description=open("docs/README.md").read(),
+    packages=["PyEventLib"],
+    long_description="",
     classifiers=[
         'License :: OSI Approved :: GNU Lesser General Public License v3'
         ' (LGPLv3)',

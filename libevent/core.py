@@ -28,7 +28,7 @@ class EventError(Exception):
     """Base class of Exceptions rasied by Events. Includes a refernce to
        the underlying exception that was thrown by handlers."""
 
-    def __init__(self, message: string):
+    def __init__(self, message: str):
         pass
 
 

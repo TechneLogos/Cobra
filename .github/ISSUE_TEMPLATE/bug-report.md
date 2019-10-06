@@ -1,6 +1,9 @@
 ---
-name: Bug report
+name: Bug Report
 about: File a bug report
+title: ''
+labels: Bug, Help Wanted
+assignees: ''
 
 ---
 

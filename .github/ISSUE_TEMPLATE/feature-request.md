@@ -1,6 +1,9 @@
 ---
-name: Feature request
+name: Feature Request
 about: Propose a feature or enhancement
+title: ''
+labels: New Feature
+assignees: ''
 
 ---
 
