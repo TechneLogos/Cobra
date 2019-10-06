@@ -1,31 +1,42 @@
 class Event(object):
-    def __init__(self, *args):
-        """Initializes a new instance of the Event class.
-        Name attribute is for logging and identification purposes."""
-        self.__listeners = set()
-        self.__listeners.update(args)
+    """The base class that all Events inherit from."""
 
-    def _dispatch(self):
+    def __init__(self):
+        """Initializes a new instance of the Event class."""
+        self._listeners = set()
+
+    def _dispatch(self, *args, **kwargs):
         """Dispatches this event."""
-        for func in self.__listeners:
+        for func in self._listeners:
             func()
 
-    def bind(self, *args):
-        """Adds the function(s) in args to the event's listeners set."""
-        self.__listeners.update(args)
+    def subscribe(self, *args):
+        """Adds the handler(s) in args to this event."""
+        self._listeners.update(args)
 
-    def unbind(self, *args):
-        """Removes a listener from this event."""
+    def unsubscribe(self, *args):
+        """Removes the handler(s) in args from this event."""
         for func in args:
-            self.__listeners.discard(func)
+            self._listeners.discard(func)
 
     def clear(self):
-        """Removes all listeners from this event."""
-        self.__listeners = set()
+        """Removes all handlers from this event."""
+        self._listeners = set()
 
 
 class EventError(Exception):
-    """Base class of Exceptions rasied by cobra."""
-    def __init__(self):
-        """"""
+    """Base class of Exceptions rasied by Events. Includes a refernce to
+       the underlying exception that was thrown by handlers."""
+
+    def __init__(self, message: string):
         pass
+
+
+class HandlerRaisedError(EventError):
+    """A wrapper class that is thrown when an event handler throws an
+       exception."""
+
+    def __init__(self, handlerError: Exception):
+        errorType = type(handlerError)
+        super().__init__("An exception of type {exceptionType} was thrown"
+                         " when dispatching an event.")

@@ -1,29 +1,7 @@
-import unittest
-import libevent
+from unittest import main
 
-
-def func1():
-    pass
-
-
-def func2():
-    pass
-
-
-class TestEvents(unittest.TestCase):
-    def setUp(self):
-        self.test_event = libevent.CustomEvent()
-
-    def test_add_listeners(self):
-        """Checks that listeners are correctly added."""
-        self.test_event.bind(func1, func2)
-
-    def test_remove_listener(self):
-        self.test_event.unbind(func1)
-
-    def test_clear_listeners(self):
-        self.test_event.clear()
+from test_custom_events import TestEvents, TestCustomEvents
 
 
 if __name__ == "__main__":
-    unittest.main()
+    main()
