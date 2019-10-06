@@ -2,12 +2,12 @@ from setuptools import setup
 
 setup(
     name="PyEventLib",
-    version="1.0.0",
+    version="0.1.0",
     description="Python event library.",
     author='Roy Stewart',
     maintainer='Roy Stewart',
     maintainer_email='roythomasstewart@gmail.com',
-    url='https://github.com/TechneLogos/PyEventLib',
+    url='https://github.com/roy-stewart/PyEventLib',
     license='GPL3.0',
     packages=["PyEventLib"],
     long_description="",
